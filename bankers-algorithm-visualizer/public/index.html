@@ -535,10 +535,10 @@
                     html += '</table>';
                     document.getElementById('workTable').innerHTML = html;
 
-                    // Finish Table
+                    // Finish Table - เพิ่มสีแดงให้ False
                     html = '<table><tr><th>Process</th><th>Status</th></tr>';
                     for (let i = 0; i < numProc; i++) {
-                        html += `<tr><td>P${i}</td><td>False</td></tr>`;
+                        html += `<tr><td>P${i}</td><td style="color: var(--danger); font-weight: 600;">False</td></tr>`;
                     }
                     html += '</table>';
                     document.getElementById('finishTable').innerHTML = html;
