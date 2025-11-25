@@ -196,7 +196,7 @@ function bankerAlgorithm() {
         for (let i = 0; i < numProc; i++) {
             if (finish[i]) continue;
 
-            // Log the check (show thinking even if it fails)
+            // บันทึกการตรวจสอบเมื่อ Fasle
             logs.push(`Step ${stepCounter}: `);
             logs.push(`Need[P${i}]: [${need[i].join(', ')}]`);
             logs.push(`Work: [${work.join(', ')}]`);
