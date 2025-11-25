@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Banker's Algorithm Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Banker's Algorithm Visualizer</h1>
+            <p class="subtitle">Deadlock Avoidance Algorithm - Safety Check</p>
+        </header>
+
+        <div class="grid">
+            <!-- Sidebar -->
+            <div>
+                <div class="card">
+                    <h2>System Configuration</h2>
+
+                    <div class="form-group">
+                        <label>Number of Processes (n)</label>
+                        <input id="numProc" type="number" min="1" max="10" value="3" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Number of Resources (m)</label>
+                        <input id="numRes" type="number" min="1" max="5" value="3" />
+                    </div>
+
+                    <div class="btn-group">
+                        <button id="generateBtn" class="btn">Generate Random</button>
+                        <button id="resetBtn" class="btn secondary">Clear All</button>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px">
+                    <h2>Available Resources</h2>
+                    <div id="availableInputs"></div>
+
+                    <button id="checkBtn" class="btn" style="margin-top: 14px">Check Safety Status</button>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="content">
+                <!-- Input Tables -->
+                <div class="matrix-wrap">
+                    <h2>Resource Allocation Tables</h2>
+                    <div class="matrix-grid">
+                        <div class="matrix">
+                            <h3>Allocation Matrix</h3>
+                            <table id="allocationInputTable"></table>
+                        </div>
+                        <div class="matrix">
+                            <h3>Maximum Matrix</h3>
+                            <table id="maximumInputTable"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Tables -->
+                <div class="matrix-wrap">
+                    <h2>Computed Matrices</h2>
+                    <div class="matrix-grid">
+                        <div class="matrix">
+                            <h3>Need Matrix (Max - Allocation)</h3>
+                            <table id="needTable"></table>
+                        </div>
+                        <div class="matrix">
+                            <h3>Work Matrix</h3>
+                            <table id="workTable"></table>
+                        </div>
+                        <div class="matrix">
+                            <h3>Finish Status</h3>
+                            <table id="finishTable"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result -->
+                <div class="result hidden" id="resultCard">
+                    <h2>Safety Analysis Result</h2>
+                    <div id="resultContent"></div>
+                    <div class="step-log" id="stepLog"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
